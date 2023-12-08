@@ -12,22 +12,28 @@ const Test = require('../class/test')
 // ↙️ тут вводимо шлях (PATH) до сторінки
 router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
-
   // ↙️ cюди вводимо назву файлу з сontainer
-  res.render('index', {
+  res.render('main', {
     // вказуємо назву контейнера
-    name: 'index',
-    // вказуємо назву компонентів
-    component: ['heading'],
-
-    // вказуємо назву сторінки
-    title: 'Назва сторінки',
-    // ... сюди можна далі продовжувати додавати потрібні технічні дані, які будуть використовуватися в layout
-
-    // вказуємо дані,
-    data: {
-      test: new Test().test,
-    },
+    name: 'main',
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+router.get('/blog', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('blog', {
+    // вказуємо назву контейнера
+    name: 'blog',
+  })
+  // ↑↑ сюди вводимо JSON дані
+})
+router.get('/community', function (req, res) {
+  // res.render генерує нам HTML сторінку
+  // ↙️ cюди вводимо назву файлу з сontainer
+  res.render('community', {
+    // вказуємо назву контейнера
+    name: 'community',
   })
   // ↑↑ сюди вводимо JSON дані
 })
